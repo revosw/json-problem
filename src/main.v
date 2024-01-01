@@ -4,10 +4,6 @@ import x.json2
 import os
 
 fn main() {
-	mut file := os.open_file('./file.txt', 'w')!
-	defer {
-		file.close()
-	}
 	content := os.read_file('./src/Devices.SerialCommunication.json')!
 	out := json2.decode[Declaration](content)!
 	println(out)
